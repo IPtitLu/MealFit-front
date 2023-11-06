@@ -1,40 +1,44 @@
-# MealFit-front
+# MealFit Front-End
 
-This template should help get you started developing with Vue 3 in Vite.
+MealFit Front-End est l'interface utilisateur de MealFit, une application interactive qui vise à fournir des plans de repas personnalisés et adaptés à vos objectifs de santé et de fitness.
 
-## Recommended IDE Setup
+## Démarrage rapide
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Pour obtenir une copie locale en cours d'exécution pour le développement et les tests, suivez ces instructions.
 
-## Type Support for `.vue` Imports in TS
+### Prérequis
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et npm installés.
+- Un environnement de développement pour Vue.js est également nécessaire. Consultez [Vue CLI](https://cli.vuejs.org/guide/installation.html) pour l'installation si vous ne l'avez pas déjà.
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+### Installation
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+1. Clonez le dépôt :
 
-## Customize configuration
+    ```sh
+    git clone https://github.com/votreusername/meal-fit-front.git
+    cd meal-fit-front
+    ```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+2. Installez les dépendances du projet avec npm :
 
-## Project Setup
+    ```sh
+    npm install
+    ```
 
-```sh
-npm install
-```
+3. Lancez le serveur de développement :
 
-### Compile and Hot-Reload for Development
+    ```sh
+    npm run serve
+    ```
 
-```sh
-npm run dev
-```
+Ceci démarrera un serveur de développement local. Ouvrez votre navigateur et visitez `http://localhost:8080` pour voir l'application en action.
 
-### Type-Check, Compile and Minify for Production
+### Auteurs
 
-```sh
-npm run build
-```
+- **Lucas Perez**
+- **Bertyn Boulikou**
+- **Valentin Bouet**
+- **Douglas Barlow**
+
+Ces contributeurs ont apporté leur passion et leur expertise à l'élaboration de MealFit.
