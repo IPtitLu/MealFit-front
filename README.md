@@ -29,7 +29,7 @@ Pour obtenir une copie locale en cours d'exécution pour le développement et le
 3. Lancez le serveur de développement :
 
     ```sh
-    npm run serve
+    npm run dev
     ```
 
 Ceci démarrera un serveur de développement local. Ouvrez votre navigateur et visitez `http://localhost:8080` pour voir l'application en action.
