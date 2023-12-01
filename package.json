@@ -19,7 +19,8 @@
     "url": "https://github.com/IPtitLu/MealFit-front/issues"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
