@@ -31,9 +31,31 @@ Pour obtenir une copie locale en cours d'exécution pour le développement et le
     ```sh
     npm run dev
     ```
+Ceci démarrera un serveur de développement local. Ouvrez votre navigateur et visitez `http://localhost:5173` pour voir l'application en action.
 
-Ceci démarrera un serveur de développement local. Ouvrez votre navigateur et visitez `http://localhost:8080` pour voir l'application en action.
+## Structure 
+- ``vite.config.ts``: This is the configuration file for Vite, a build tool that significantly improves the development experience.
+- ``postcss.config.js`` and tailwind.config.ts: These files are used for configuring PostCSS and Tailwind CSS, respectively.
 
+## Source Directory (src/)
+- ``App.vue``: This is the main Vue component that acts as the root of your app.
+- ``main.ts``: This is the entry point of your application where the Vue instance is created and mounted to the DOM.
+- ``router/index.ts``: This file is used for defining the routes of your application.
+
+## Components Directory (src/components/)
+
+This directory contains all the Vue components used in your application. Each component has its own Vue file (.vue), which includes its template, script, and style.
+
+- ``icons/``: This directory contains Vue components for different icons used in your application.
+
+## Views Directory (src/views/)
+This directory typically contains Vue components that act as pages in your application. These components are often associated with routes defined in ``src/router/index.ts``.
+
+``Home.vue``: This is likely the home page of your application.
+Assets Directory (src/assets/)
+This directory is used to store static assets like images and stylesheets.
+
+``main.css``: The main stylesheet for your application.
 ### Auteurs
 
 - **Lucas Perez**
