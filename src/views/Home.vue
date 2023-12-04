@@ -1,4 +1,4 @@
 <template>
-    <h1 class="text-green-400">Home</h1>
-    <IconCommunity />
+  <h1 class="text-green-400">fffHome</h1>
+  <IconCommunity />
 </template>
