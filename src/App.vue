@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import NavBar from './views/NavBar.vue';
+
+</script>
 
 <template>
-  <router-view></router-view>
+  <div>
+    <NavBar />
+    <router-view></router-view>
+  </div>
 </template>
-
-<style scoped></style>
