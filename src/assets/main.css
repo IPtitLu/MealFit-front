@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+/* Appliquer Work Sans au texte */
+body {
+    font-family: "Baloo 2", cursive;
+    font-weight: 100;
+}
+
+.transition-global {
+    transition-property: all;
+    transition-duration: 100ms;
+    transition-timing-function: ease-in-out;
+}

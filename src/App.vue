@@ -1,11 +1,21 @@
 <script setup lang="ts">
-import NavBar from './views/NavBar.vue';
+import {computed} from 'vue';
+import { useRoute } from 'vue-router';
+
+const default_layout = "default";
+
+const route = useRoute();
+
+const layout = computed(() => {
+  return (route?.meta?.layout || default_layout);
+});
+
+console.log(layout);
 
 </script>
 
 <template>
-  <div>
-    <NavBar />
+  <component :is="layout">
     <router-view></router-view>
-  </div>
+  </component>
 </template>
