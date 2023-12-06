@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full">
-
+  <div class="w-full flex justify-center items-center">
+    <div class="w-4/5">
     <!-- Bloc tabs -->
     <div class="mb-4">
       <div class="sm:hidden">
@@ -127,8 +127,9 @@
         </button>
       </div>
     </section>
-
   </div>
+  </div>
+  
 </template>
 
 <script setup>
