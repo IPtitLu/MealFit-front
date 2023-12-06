@@ -1,5 +1,5 @@
 <template>
-    <nav style="background-color: #FFD966; color: #8A0B01;" class="w-full flex justify-center items-center flex-col mb-12">
+    <nav style="background-color: #FFD966; color: #8A0B01;" class="w-full flex justify-center items-center flex-col">
       <div class="w-4/5 flex flex-row justify-center items-center">
         <div class="container mx-auto px-6 flex items-center justify-between">
           <MainLogo class="w-[50px]"/>
