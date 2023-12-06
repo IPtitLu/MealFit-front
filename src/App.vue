@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
-const default_layout = "default";
+const default_layout = "Default";
 
 const route = useRoute();
 
 const layout = computed(() => {
-  return (route?.meta?.layout || default_layout);
+  console.log("route", route?.meta?.layout as string);
+  return (route?.meta?.layout as string || default_layout) + "Layout";
 });
 
-console.log(layout);
+watch(layout, (newLayout) => {
+  console.log("layout", newLayout);
+}, { immediate: true });
 
 </script>
 

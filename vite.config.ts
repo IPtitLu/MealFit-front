@@ -8,7 +8,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
-    Components({}),
+    Components({
+      dirs: ['src/components']
+    }),
     Icons({
       compiler: 'vue3',
       autoInstall: true,

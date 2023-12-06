@@ -6,16 +6,16 @@ import MesRecettes from '@/views/MesRecettes.vue'
 import SeConnecter from '@/views/SeConnecter.vue'
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/planificateur-de-repas', component: PlanificateurDeRepas },
-    { path: '/mes-recettes', component: MesRecettes },
-    { path: '/se-connecter', component: SeConnecter, meta: {layout: "withoutNavbar"} },
-  ];
+  { path: '/', component: Home },
+  { path: '/planificateur-de-repas', component: PlanificateurDeRepas },
+  { path: '/mes-recettes', component: MesRecettes },
+  { path: '/se-connecter', component: SeConnecter, meta: { layout: "WithoutNavbar" } },
+];
 
 const router = createRouter({
-    // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-    history: createWebHashHistory(),
-    routes, // short for `routes: routes`
+  // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+  history: createWebHashHistory(),
+  routes, // short for `routes: routes`
 })
 
 export default router;
