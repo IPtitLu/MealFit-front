@@ -7,8 +7,8 @@
     <body class="h-full">
     ```
   -->
-  <div class="flex min-h-full flex-1 flex-col justify-center px-6 pb-12 lg:px-8">
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center items-center">
+  <div class="flex min-h-full flex-1 flex-col justify-center px-6 pb-12 lg:px-8 ">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center items-center ">
       <MainLogo class="w-[50px] h-auto mb-4"/>
       <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Connectez vous</h2>
     </div>
@@ -23,7 +23,7 @@
         </div>
 
         <div>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between place-content-center">
             <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Mot de passe</label>
             <div class="text-sm">
               <a href="#" class="font-semibold text-primary-700 hover:text-primary-400">Mot de passe oublié</a>
@@ -34,13 +34,16 @@
           </div>
         </div>
 
-        <div>
-          <button type="submit" class="flex w-full justify-center rounded-md bg-primary-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Connexion</button>
+        <div class="flex justify-between space-x-4">
+          <RouterLink to="/" class="flex w-1/2 justify-center rounded-md bg-gray-300 px-3 py-1.5 text-sm font-semibold leading-6 text-gray-700 shadow-sm hover:bg-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600">
+            <button type="button">Retour</button>
+          </RouterLink>
+          <button type="submit" class="flex w-1/2 justify-center rounded-md bg-primary-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600">Connexion</button>
         </div>
       </form>
 
-      <p class="mt-10 text-center text-sm text-gray-500">
-        <a href="#" class="font-semibold leading-6 text-primary-700 hover:text-primary-400">S'inscrire</a>
+      <p class="mt-10 text-center text-sm">
+        <RouterLink to="/inscription" class="font-semibold leading-6 text-primary-700 hover:text-primary-400">S'inscrire</RouterLink>
       </p>
     </div>
   </div>

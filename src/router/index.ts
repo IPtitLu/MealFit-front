@@ -4,12 +4,14 @@ import Home from '@/views/Home.vue'
 import PlanificateurDeRepas from '@/views/PlanificateurDeRepas.vue'
 import MesRecettes from '@/views/MesRecettes.vue'
 import SeConnecter from '@/views/SeConnecter.vue'
+import Inscription from '@/views/Inscription.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/planificateur-de-repas', component: PlanificateurDeRepas },
   { path: '/mes-recettes', component: MesRecettes },
   { path: '/se-connecter', component: SeConnecter, meta: { layout: "WithoutNavbar" } },
+  { path: '/inscription', component: Inscription, meta: { layout: "WithoutNavbar" } },
 ];
 
 const router = createRouter({
