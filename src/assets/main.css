@@ -15,6 +15,7 @@ h6 {
 
 /* Appliquer Work Sans au texte */
 body {
+    background-color: #fff3d6;
     font-family: "Baloo 2", cursive;
     font-weight: 100;
 }
