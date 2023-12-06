@@ -140,8 +140,6 @@ const tabs = [
   { name: 'Suggestion de recettes', href: '#', current: false },
 ]
 
-
-
 const products = [
   {
     id: 1,

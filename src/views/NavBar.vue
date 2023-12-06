@@ -13,11 +13,57 @@
             <li>
               <RouterLink to="/mes-recettes" class="text-sm"><h2 class="hover:text-primary-600 transition-global">Mes recettes</h2></RouterLink>
             </li>
-            <li class="ml-6">
-              <RouterLink to="/se-connecter" ><IconProfile class="hover:text-primary-600 transition-global" /></RouterLink>
+            <li v-if="user" class="ml-6 flex flex-row">
+              <svg @click="handleLogout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-primary-500 mr-1">
+                <path fill-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5V15a.75.75 0 011.5 0v3.75a3 3 0 01-3 3h-6a3 3 0 01-3-3V5.25a3 3 0 013-3h6a3 3 0 013 3V9A.75.75 0 0115 9V5.25a1.5 1.5 0 00-1.5-1.5h-6zm5.03 4.72a.75.75 0 010 1.06l-1.72 1.72h10.94a.75.75 0 010 1.5H10.81l1.72 1.72a.75.75 0 11-1.06 1.06l-3-3a.75.75 0 010-1.06l3-3a.75.75 0 011.06 0z" clip-rule="evenodd" />
+              </svg>
+              {{ user.firstName }} {{ user.lastName }}
+            </li>
+            <li v-else class="ml-6">
+              <RouterLink to="/se-connecter"><IconProfile class="hover:text-primary-600 transition-global" /></RouterLink>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </template>
+
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const user = ref(null);
+
+// la dépendance jwt-decode ne fonctionne pas
+function decodeJWT(token) {
+  try {
+    const base64Url = token.split('.')[1]; // Obtenez la charge utile
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+  } catch (error) {
+    console.error('Erreur lors du décodage du JWT:', error);
+    return null;
+  }
+}
+
+onMounted(() => {
+  const token = localStorage.getItem('jwt');
+  if (token) {
+    try {
+      user.value = decodeJWT(token);
+      console.log(user.value);
+    } catch (error) {
+      console.error('Erreur de décodage du JWT:', error);
+    }
+  }
+});
+
+const handleLogout = () => {
+  localStorage.removeItem('jwt');
+  user.value = null;
+};
+</script>
+
