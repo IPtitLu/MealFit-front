@@ -26,7 +26,9 @@
           <div class="flex items-center justify-between place-content-center">
             <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Mot de passe</label>
             <div class="text-sm">
-              <a href="#" class="font-semibold text-primary-700 hover:text-primary-400">Mot de passe oublié</a>
+              <RouterLink to="/mdp-oublie" class="font-semibold text-primary-700 hover:text-primary-400">
+                <button type="button">Mot de passe oublié</button>
+              </RouterLink>
             </div>
           </div>
           <div class="mt-2">
