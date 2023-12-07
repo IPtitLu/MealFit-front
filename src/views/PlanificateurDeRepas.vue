@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
 
       <div class="w-full h-fit px-4 rounded-md pt-6 pb-10 bg-white drop-shadow-lg">        
         <h2 class="mb-1 text-center">Liste d'ingrédients</h2>
@@ -68,7 +68,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                           </svg>
-                        </button>
+                        </button>     
                       </td>
                     </tr>
                     <tr v-if="validatedIngredients.length === 0">
@@ -81,7 +81,6 @@
           </div>
         </div>
       </div>
-  </div>
   </div>
 </template>
 
