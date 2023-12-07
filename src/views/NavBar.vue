@@ -11,7 +11,7 @@
               <RouterLink to="/planificateur-de-repas" class="text-sm"><h2 class="hover:text-primary-600 transition-global">Planificateur de repas</h2></RouterLink>
             </li>
             <li>
-              <RouterLink to="/mes-recettes" class="text-sm"><h2 class="hover:text-primary-600 transition-global">Mes recettes</h2></RouterLink>
+              <RouterLink to="/recettes" class="text-sm"><h2 class="hover:text-primary-600 transition-global">Mes recettes</h2></RouterLink>
             </li>
             <li v-if="user" class="ml-6 flex flex-row">
               <svg @click="handleLogout" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 cursor-pointer hover:text-primary-500 mr-1">
@@ -34,8 +34,6 @@ import { useAuthStore } from '../composables/authStore';
 
 const authStore = useAuthStore();
 const user = computed(() => authStore.state.user);
-
-console.log('user : ', user);
 
 const handleLogout = () => {
   authStore.logout();

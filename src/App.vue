@@ -7,7 +7,6 @@ const default_layout = "Default";
 const route = useRoute();
 
 const layout = computed(() => {
-  console.log("route", route?.meta?.layout as string);
   return (route?.meta?.layout as string || default_layout) + "Layout";
 });
 

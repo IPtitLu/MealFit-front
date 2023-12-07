@@ -2,15 +2,22 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import PlanificateurDeRepas from '@/views/PlanificateurDeRepas.vue'
-import MesRecettes from '@/views/MesRecettes.vue'
+import Index from '@/views/recettes/index.vue'
 import SeConnecter from '@/views/SeConnecter.vue'
 import Inscription from '@/views/Inscription.vue'
 import MdpOublie from '@/views/MdpOublie.vue'
+import Parcourir from '@/views/recettes/Parcourir.vue'
+import MesRecettes from '@/views/recettes/MesRecettes.vue'
+import Suggestions from '@/views/recettes/Suggestions.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/planificateur-de-repas', component: PlanificateurDeRepas },
-  { path: '/mes-recettes', component: MesRecettes },
+  { path: '/recettes', component: Index, children:[
+    { path: '', component: Parcourir },
+    { path: 'mes-recettes', component: MesRecettes },
+    { path: 'suggestions', component: Suggestions },
+  ]},
   { path: '/se-connecter', component: SeConnecter, meta: { layout: "WithoutNavbar" } },
   { path: '/inscription', component: Inscription, meta: { layout: "WithoutNavbar" } },
   { path: '/mdp-oublie', component: MdpOublie, meta: { layout: "WithoutNavbar" } },
