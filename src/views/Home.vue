@@ -19,7 +19,7 @@
         </div>
       </li>
     </ul>
-    <button type="button" class="rounded-full w-1/3 m-auto mt-7 bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Découvrir nos recettes </button>
+    <RouterLink to="/mes-recettes" class="text-center rounded-full w-1/3 m-auto mt-7 bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Découvrir nos recettes</RouterLink>
   </div>
   <!-- HERO SECTION -->
   <div class="relative isolate overflow-hidden h-[530px] mt-28 mb-28 flex flex-row justify-center">
@@ -27,7 +27,7 @@
     <div class="flex flex-col w2/3 justify-start">
         <div class="flex flex-col w-1/3 h-full justify-center">
         <h2 class="text-2xl w-full font-extrabold tracking-tight text-primary-700">Nous créons et gérons vos liste de course en fonction de vos envies</h2>
-        <button type="button" class="rounded-full bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Créer mon programme</button>
+        <RouterLink to="/planificateur-de-repas" class="text-center rounded-full bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Créer mon programme</RouterLink>
       </div>
     </div>
   </div>
