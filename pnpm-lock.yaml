@@ -37,6 +37,9 @@ devDependencies:
   '@babel/eslint-parser':
     specifier: ^7.23.3
     version: 7.23.3(@babel/core@7.23.5)(eslint@8.55.0)
+  '@iconify/vue':
+    specifier: ^4.1.1
+    version: 4.1.1(vue@3.3.9)
   '@tsconfig/node18':
     specifier: ^18.2.2
     version: 18.2.2
@@ -605,6 +608,15 @@ packages:
       local-pkg: 0.4.3
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/vue@4.1.1(vue@3.3.9):
+    resolution: {integrity: sha512-RL85Bm/DAe8y6rT6pux7D2FJSiUEM/TPfyK7GrbAOfTSwrhvwJW+S5yijdGcmtXouA8MtuH9C7l4hiSE4mLMjg==}
+    peerDependencies:
+      vue: '>=3'
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.3.9(typescript@5.2.2)
     dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
