@@ -47,8 +47,8 @@ const methods = {
         localStorage.removeItem('user');
         state.token = null;
         state.user = null;
-        router.push('/login');
-    }
+        router.push('/');
+    }   
 };
 
 // Appel initial pour récupérer les données utilisateur si le token est présent

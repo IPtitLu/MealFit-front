@@ -1,6 +1,7 @@
 import router from '@/router';
 import axios from 'axios';
 import { ref } from 'vue';
+import { useAuthStore } from './authStore';
 
 interface RegisterResponse {
     token: string;
@@ -15,6 +16,7 @@ interface UseRegisterReturn {
 export function useRegister(): UseRegisterReturn {
     const isLoading = ref(false);
     const error = ref<string | null>(null);
+    const authStore = useAuthStore();
 
     const register = async (firstName: string, lastName: string, email: string, password: string): Promise<void> => {
         isLoading.value = true;
@@ -31,6 +33,7 @@ export function useRegister(): UseRegisterReturn {
             console.log(response);
             // save dans store user 
             localStorage.setItem('jwt', response.data.token);
+            authStore.setUserToken(response.data.token);
             router.push('/');
         } catch (err) {
             if (axios.isAxiosError(err) && err.response) {
