@@ -29,41 +29,15 @@
   </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, watch, onMounted, computed } from 'vue';
+import { useAuthStore } from '../composables/authStore';
 
-const user = ref(null);
+const authStore = useAuthStore();
+const user = computed(() => authStore.state.user);
 
-// la dépendance jwt-decode ne fonctionne pas
-function decodeJWT(token) {
-  try {
-    const base64Url = token.split('.')[1]; // Obtenez la charge utile
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-  } catch (error) {
-    console.error('Erreur lors du décodage du JWT:', error);
-    return null;
-  }
-}
-
-onMounted(() => {
-  const token = localStorage.getItem('jwt');
-  if (token) {
-    try {
-      user.value = decodeJWT(token);
-      console.log(user.value);
-    } catch (error) {
-      console.error('Erreur de décodage du JWT:', error);
-    }
-  }
-});
+console.log('user : ', user);
 
 const handleLogout = () => {
-  localStorage.removeItem('jwt');
-  user.value = null;
+  authStore.logout();
 };
 </script>
-

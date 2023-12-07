@@ -61,15 +61,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useLogin } from '../hook/useLogin';
+import { useLogin } from '../composables/useLogin';
 
 const email = ref('');
 const password = ref('');
 const { isLoading, error, login } = useLogin();
 
 const handleLogin = async () => {
-  await login(email.value, password.value);
+  try {
+    await login(email.value, password.value);
+  } catch (err) {
+    // Gérez les erreurs ici
+  }
 };
 
 // Utilisez `isLoading` et `error` pour afficher des messages d'état
-</script>../composables/useLogin../composables/useLogin
+</script>../composables/useLogin../composables/authStore
