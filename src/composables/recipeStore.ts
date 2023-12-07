@@ -10,20 +10,25 @@ interface Recipe {
 interface RecipeStoreState {
     recipes: Recipe[];
     randomRecipes: Recipe[];
+    favoritesRecipes: Recipe[];
 }
 
 const state = reactive<RecipeStoreState>({
     recipes: [],
-    randomRecipes: []
+    randomRecipes: [],
+    favoritesRecipes: []
 });
 
 const methods = {
     setRecipes(recipes: Recipe[]) {
-        console.log(recipes);
         state.recipes = recipes;
     },
     setRandomRecipes(recipes: Recipe[]) {
         state.randomRecipes = recipes;
+    },
+    setFavoritesRecipes(recipes: Recipe[]) {
+        state.favoritesRecipes = [...recipes];
+        console.log('store 1111 : ', state.favoritesRecipes);
     }
 };
 
