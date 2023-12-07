@@ -2,7 +2,7 @@
   <div class="w-full">
 
     <!-- Bloc tabs -->
-    <div class="mb-4">
+    <div class="mb-4 mt-12">
       <div class="sm:hidden">
         <label for="tabs" class="sr-only">Select a tab</label>
         <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->

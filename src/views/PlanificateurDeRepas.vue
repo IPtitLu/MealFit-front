@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full grid grid-cols-2 gap-8">
+  <div class="w-full grid grid-cols-2 gap-8 p-12">
     <div class="w-full">
       <!-- Input -->  
       <div class="w-full flex justify-center items-center flex-col mb-10 px-6 rounded-md py-4 bg-white drop-shadow-lg pt-6 pb-10">

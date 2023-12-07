@@ -7,7 +7,7 @@
     <body class="h-full">
     ```
   -->
-  <div class="flex min-h-full flex-1 flex-col justify-center px-6 pb-12 lg:px-8 ">
+  <div class="flex min-h-full flex-1 flex-col justify-center px-6 pb-12 lg:px-8 mt-12">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm flex flex-col justify-center items-center ">
       <MainLogo class="w-[50px] h-auto mb-4"/>
       <h2 class="text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Connectez vous</h2>
