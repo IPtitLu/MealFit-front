@@ -88,6 +88,48 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useGrocery } from '@/composables/useGrocery'; 
+const { groceryList, addGroceryItem, getGroceryList, updateGroceryItem } = useGrocery();
+
+const ingredients = ref([]);
+const newIngredient = ref('');
+const validatedIngredients = ref([]);
+
+const addIngredient = () => {
+  if (newIngredient.value.trim()) {
+    ingredients.value.push(newIngredient.value.trim());
+    newIngredient.value = '';
+  }
+};
+
+const removeIngredient = (index) => {
+  ingredients.value.splice(index, 1);
+};
+
+const validateIngredients = async () => {
+  for (const ingredient of ingredients.value) {
+    await addGroceryItem(yourUserId, ingredient.id, ingredient.qty, ingredient.unit);
+  }
+
+  await getGroceryList(yourUserId);
+
+  ingredients.value = [];
+};
+
+const removeValidateIngredient = async (index) => {
+  await updateGroceryItem(yourUserId, validatedIngredients.value[index].id, {
+    quantity: 0,
+    unit: '',
+  });
+
+  await getGroceryList(yourUserId);
+
+  validatedIngredients.value.splice(index, 1);
+};
+</script>
+
+<script setup>
+import { ref } from 'vue';
 
 const ingredients = ref([]);
 const newIngredient = ref('');
