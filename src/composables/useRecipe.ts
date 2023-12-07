@@ -119,7 +119,7 @@ export function useGetFavoritesRecipes() {
     const error = ref<string | null>(null);
     const authStore = useAuthStore();
 
-    const getFavoritesRecipes = async (recipeId: string): Promise<void> => {
+    const getFavoritesRecipes = async (): Promise<void> => {
         isLoading.value = true;
         error.value = null;
         const recipeStore = useRecipeStore();
@@ -136,8 +136,6 @@ export function useGetFavoritesRecipes() {
 
         const jwtToken = localStorage.getItem('user'); 
         
-        console.log('recipe id : ', recipeId);
-
         try {
             const response = await axios.get<Recipe[]>(`http://localhost:3333/api/users/${userId}/favorites`,
             {
