@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import Footer from '@/views/Footer.vue';
 </script>
 
 <template>
@@ -7,5 +7,6 @@
     <div class="w-4/5 flex justify-center items-center">
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
