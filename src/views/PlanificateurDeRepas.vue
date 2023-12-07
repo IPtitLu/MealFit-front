@@ -127,7 +127,7 @@ const removeValidateIngredient = async (index) => {
   validatedIngredients.value.splice(index, 1);
 };
 </script>
-
+<!-- 
 <script setup>
 import { ref } from 'vue';
 
@@ -155,4 +155,4 @@ const validateIngredients = () => {
 const removeValidateIngredient = (index) => {
   validatedIngredients.value.splice(index, 1);
 };
-</script>
+</script> -->
