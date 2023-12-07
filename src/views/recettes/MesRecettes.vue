@@ -48,14 +48,8 @@ import { useRecipeStore } from '../../composables/recipeStore'; // Importez reci
 const authStore = useAuthStore();
 const user = computed(() => authStore.state.user);
 
-onMounted(async () => {
-  if (recipes.value.length === 0) {
-    await suggestRecipes(['rice']); 
-  }
-});
-
 const { suggestRecipes } = useRecipe(); // Utilisez suggestRecipes pour récupérer les recettes
 const recipeStore = useRecipeStore(); // Accédez à recipeStore
 
-const recipes = computed(() => recipeStore.state.recipes); // Accédez aux recettes stockées
+const recipes = computed(() => recipeStore.state.recipes ?? []); // Accédez aux recettes stockées
 </script>

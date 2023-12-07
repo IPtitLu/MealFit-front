@@ -4,16 +4,13 @@ import { ref } from 'vue';
 import { useRecipeStore } from './recipeStore';
 
 interface Recipe {
-    id: number;
+    id: string;
     title: string;
     image: string;
 }
 
-interface RandomRecipe {
-    results : {
-        title: string;
-        image: string;
-    }
+interface RandomRecipeResponse {
+    results: Recipe[];
 }
 
 export function useRecipe() {
@@ -35,7 +32,7 @@ export function useRecipe() {
 
             console.log('recipes : ', response.data);
 
-            recipeStore.setRecipes(response.data.map(({ title, image }) => ({ title, image })));
+            recipeStore.setRecipes(response.data.map(({ id, title, image }) => ({ id, title, image })));
         } catch (err) {
             error.value = err instanceof Error ? err.message : 'Une erreur inconnue est survenue';
         } finally {
@@ -44,4 +41,28 @@ export function useRecipe() {
     };
 
     return { isLoading, error, suggestRecipes };
+}
+
+export function useRandomRecipes() {
+    const isLoading = ref(false);
+    const error = ref<string | null>(null);
+    const recipeStore = useRecipeStore();
+
+    const fetchRandomRecipes = async (): Promise<void> => {
+        isLoading.value = true;
+        error.value = null;
+
+        try {
+            const response = await axios.post<RandomRecipeResponse>('http://localhost:3333/api/recipes/search');
+            
+            // Mise à jour du recipeStore avec les recettes reçues
+            recipeStore.setRandomRecipes(response.data.results.map(({ id, title, image }) => ({ id, title, image })));
+        } catch (err) {
+            error.value = err instanceof Error ? err.message : 'Une erreur inconnue est survenue';
+        } finally {
+            isLoading.value = false;
+        }
+    };
+
+    return { isLoading, error, fetchRandomRecipes };
 }
