@@ -29,6 +29,7 @@ const methods = {
                 }
             });
             state.user = response.data;
+            console.log(response.data)
         } catch (err) {
             console.error(err);
             state.error = 'Erreur lors de la récupération des données utilisateur';

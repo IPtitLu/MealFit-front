@@ -10,4 +10,5 @@ export interface User {
   firstName: string;
   lastName: number;
   email: number;
+  _id: number;
 }
