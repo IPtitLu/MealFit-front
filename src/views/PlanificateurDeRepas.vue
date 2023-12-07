@@ -88,8 +88,13 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useGrocery } from '@/composables/useGrocery'; 
-const { groceryList, addGroceryItem, getGroceryList, updateGroceryItem } = useGrocery();
+import { useGrocery } from '@/composables/useGrocery';
+import { useAuthStore } from '@/composables/authStore';
+ 
+const { groceryList, addGroceryItem, getGroceryList, updateGroceryItem } = useGrocery();`
+`
+const { state } = useAuthStore();
+const userId = state.user ? state.user._id : null;
 
 const ingredients = ref([]);
 const newIngredient = ref('');
@@ -108,21 +113,21 @@ const removeIngredient = (index) => {
 
 const validateIngredients = async () => {
   for (const ingredient of ingredients.value) {
-    await addGroceryItem(yourUserId, ingredient.id, ingredient.qty, ingredient.unit);
+    await addGroceryItem(userId, ingredient.id, ingredient.qty, ingredient.unit);
   }
 
-  await getGroceryList(yourUserId);
+  await getGroceryList(userId);
 
   ingredients.value = [];
 };
 
 const removeValidateIngredient = async (index) => {
-  await updateGroceryItem(yourUserId, validatedIngredients.value[index].id, {
+  await updateGroceryItem('6571b8abf76454c952ac9a69', validatedIngredients.value[index].id, {
     quantity: 0,
     unit: '',
   });
 
-  await getGroceryList(yourUserId);
+  await getGroceryList('6571b8abf76454c952ac9a69');
 
   validatedIngredients.value.splice(index, 1);
 };

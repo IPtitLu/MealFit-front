@@ -1,7 +1,6 @@
 import { ref } from 'vue';
 import axios from 'axios';
-
-const baseUrl = import.meta.env.VITE_BASE_URL;
+const baseUrl = `${import.meta.env.VITE_BASE_URL}/api/groceries`;
 
 interface IGroceryItem {
   ingredientId: string;
@@ -16,12 +15,12 @@ interface IUserGroceryList {
 }
 
 export const useGrocery = () => {
+  
   const groceryList = ref<IUserGroceryList>({ userId: '', items: [] });
 
-  const addGroceryItem = async (userId: string, id: string, qty: number, unit: string) => {
+  const addGroceryItem = async (userId : string, id: string, qty: number, unit: string) => {
     try {
-      const response = await axios.post<IUserGroceryList>(`${baseUrl}/add`, {
-        userId,
+      const response = await axios.post<IUserGroceryList>(`${baseUrl}/${userId}/add`, {
         id,
         qty,
         unit,
