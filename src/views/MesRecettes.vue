@@ -19,7 +19,6 @@
         </nav>
       </div>
     </div>
-
     <!-- Bloc parcourir les recettes -->
     <section v-if="activeTab === 'Parcourir les recettes'" class="bg-white drop-shadow-lg pt-6 pb-10 rounded-md mb-4">
       <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
