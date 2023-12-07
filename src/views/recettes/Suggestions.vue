@@ -15,7 +15,7 @@
                       {{ recipe.title }}
                   </p>
                 </div>
-                <span class="text-sm font-medium text-red-900 cursor-pointer hover:text-red-400 inline-flex">
+                <span @click="addRecipeToFavorites(recipe.id)" class="text-sm font-medium text-red-900 cursor-pointer hover:text-red-400 inline-flex">
                   <Icon icon="mdi:heart-outline" class="w-6 h-6"></Icon>
                 </span>
               </div>
@@ -34,7 +34,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import { useAuthStore } from '../../composables/authStore';
-import { useRecipe } from '../../composables/useRecipe'; // Importez useRecipe
+import { useRecipe, useRecipeToFavorite } from '../../composables/useRecipe'; // Importez useRecipe
 import { useRecipeStore } from '../../composables/recipeStore'; // Importez recipeStore
 import { Icon } from '@iconify/vue';
 
@@ -51,4 +51,6 @@ onMounted(async () => {
     await suggestRecipes(['rice']); 
   }
 });
+
+const { addRecipeToFavorites } = useRecipeToFavorite();
 </script>

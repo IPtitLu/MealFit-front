@@ -2,6 +2,7 @@ import axios from 'axios';
 import { reactive, readonly } from 'vue';
 import router from '@/router';
 import type { User } from '../interface/globalInterfaces';
+import {computed} from 'vue'
 
 interface AuthStoreState {
     user: User | null;
@@ -45,6 +46,7 @@ const methods = {
 
     logout() {
         localStorage.removeItem('user');
+        localStorage.removeItem('jwt');
         state.token = null;
         state.user = null;
         router.push('/');
@@ -56,9 +58,16 @@ if (state.token) {
     methods.fetchUser();
 }
 
+export const withState =  (target: any, state: any)=>{
+  Object.keys(state).forEach(prop =>{
+    target[prop] = computed(()=> state[prop])
+  })
+  return target
+}
+
 export const useAuthStore = () => {
     return {
-        state: readonly(state),
+        state: withState({}, state),
         ...methods
     };
 }

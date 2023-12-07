@@ -33,7 +33,7 @@ import { ref, watch, onMounted, computed } from 'vue';
 import { useAuthStore } from '../composables/authStore';
 
 const authStore = useAuthStore();
-const user = computed(() => authStore.state.user);
+const user = computed(() => authStore.state.user.value);
 
 const handleLogout = () => {
   authStore.logout();

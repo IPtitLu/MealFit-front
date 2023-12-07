@@ -7,6 +7,7 @@ export interface Ingredient {
 }
 
 export interface User {
+  _id?: string,
   firstName: string;
   lastName: number;
   email: number;
