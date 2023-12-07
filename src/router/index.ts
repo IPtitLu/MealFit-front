@@ -5,6 +5,7 @@ import PlanificateurDeRepas from '@/views/PlanificateurDeRepas.vue'
 import MesRecettes from '@/views/MesRecettes.vue'
 import SeConnecter from '@/views/SeConnecter.vue'
 import Inscription from '@/views/Inscription.vue'
+import MdpOublie from '@/views/MdpOublie.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -12,6 +13,7 @@ const routes = [
   { path: '/mes-recettes', component: MesRecettes },
   { path: '/se-connecter', component: SeConnecter, meta: { layout: "WithoutNavbar" } },
   { path: '/inscription', component: Inscription, meta: { layout: "WithoutNavbar" } },
+  { path: '/mdp-oublie', component: MdpOublie, meta: { layout: "WithoutNavbar" } },
 ];
 
 const router = createRouter({

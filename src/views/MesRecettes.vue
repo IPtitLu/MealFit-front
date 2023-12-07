@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full">
-
+  <div class="w-full flex justify-center items-center">
+    <div class="w-4/5">
     <!-- Bloc tabs -->
     <div class="mb-4 mt-12">
       <div class="sm:hidden">
@@ -126,8 +126,9 @@
         </button>
       </div>
     </section>
-
   </div>
+  </div>
+  
 </template>
 
 <script setup>
@@ -138,8 +139,6 @@ const tabs = [
   { name: 'Mes recettes', href: '#', current: false },
   { name: 'Suggestion de recettes', href: '#', current: false },
 ]
-
-
 
 const products = [
   {

@@ -5,3 +5,9 @@ export interface Ingredient {
   glucides: number;
   graisses: number;
 }
+
+export interface User {
+  firstName: string;
+  lastName: number;
+  email: number;
+}
