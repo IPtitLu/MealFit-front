@@ -1,41 +1,51 @@
 <template>
-    <div class="relative isolate overflow-hidden h-[530px] mb-28">
-      <img src="../assets/img/img_background_section_1_lp.svg" alt="" class="absolute inset-0 -z-10 w-full h-full object-cover" />
-      <div class="mx-auto max-w-3xl sm:py-48 lg:py-56 h-full">
-        <div class="text-start">
-          <h1 class="text-8xl font-extrabold tracking-tight text-primary-700 sm:text-6xl">Meal Fit</h1>
-          <p class="mt-6 text-xl max-w-md	font-semibold leading-8 text-primary-700">Optimisez votre nutrition et simplifiez votre routine alimentaire</p>
-        </div>
+  <div class="relative isolate overflow-hidden h-[530px] mb-28">
+    <img src="../assets/img/img_background_section_1_lp.svg" alt=""
+      class="absolute inset-0 -z-10 w-full h-full object-cover" />
+    <div class="mx-auto max-w-3xl sm:py-48 lg:py-56 h-full">
+      <div class="text-start">
+        <h1 class="text-8xl font-extrabold tracking-tight text-primary-700 sm:text-6xl">Meal Fit</h1>
+        <p class="mt-6 text-xl max-w-md	font-semibold leading-8 text-primary-700">Optimisez votre nutrition et simplifiez
+          votre routine alimentaire</p>
       </div>
     </div>
-    <div class="flex flex-col mx-auto max-w-5xl px-12">
-      <h2 class="m-auto mb-12 text-3xl font-semibold leading-8 text-primary-400 text-center">Plus de 1000 recettes pour vous aidez à mieux vous nutritionnez.</h2>
-      <ul role="list" class="grid grid-cols-2 gap-5 ">
-        <li v-for="file in files" :key="file.source">
-          <div class="group w-full m-auto flex flex-row justify-center">
-            <img :src="file.source" alt="" class="pointer-events-none object-cover" />
-          </div>
-        </li>
-      </ul>
-      <button type="button" class="rounded-full w-1/3 m-auto mt-7 bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Découvrir nos recettes </button>
-    </div>
-    <div class="relative isolate overflow-hidden h-[530px] mt-28 mb-28 flex flex-row justify-center">
-      <img src="../assets/img/Rectangle_45.png" alt="" class="absolute inset-0 -z-10 w-full h-full object-cover" />
-      <div class="flex flex-col w2/3 justify-start">
-         <div class="flex flex-col w-1/3 h-full justify-center">
-          <h2 class="text-2xl w-full font-extrabold tracking-tight text-primary-700">Nous créons et gérons vos liste de course en fonction de vos envies</h2>
-          <button type="button" class="rounded-full bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Créer mon programme</button>
+  </div>
+  <div class="flex flex-col mx-auto max-w-5xl px-12">
+    <h2 class="m-auto mb-12 text-3xl font-semibold leading-8 text-primary-400 text-center">Plus de 1000 recettes pour vous
+      aidez à mieux vous nutritionnez.</h2>
+    <ul role="list" class="grid grid-cols-2 gap-5 ">
+      <li v-for="file in files" :key="file.source">
+        <div class="group w-full m-auto flex flex-row justify-center">
+          <img :src="file.source" alt="" class="pointer-events-none object-cover" />
         </div>
+      </li>
+    </ul>
+    <button type="button"
+      class="rounded-full w-1/3 m-auto mt-7 bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Découvrir
+      nos recettes </button>
+  </div>
+  <div class="relative isolate overflow-hidden h-[530px] mt-28 mb-28 flex flex-row justify-center">
+    <img src="../assets/img/Rectangle_45.png" alt="" class="absolute inset-0 -z-10 w-full h-full object-cover" />
+    <div class="flex flex-col w2/3 justify-start">
+      <div class="flex flex-col w-1/3 h-full justify-center">
+        <h2 class="text-2xl w-full font-extrabold tracking-tight text-primary-700">Nous créons et gérons vos liste de
+          course en fonction de vos envies</h2>
+        <button type="button"
+          class="rounded-full bg-secondary-400 px-3.5 py-2 text-sm mt-5 text-primary-700 font-semibold">Créer mon
+          programme</button>
       </div>
     </div>
-    <div>
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-xl text-center">
-          <h2 class="m-auto text-3xl font-semibold leading-8 text-primary-400 text-center">Ils ont testés, Ils ont adorés.</h2>
-        </div>
+  </div>
+  <div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-xl text-center">
+        <h2 class="m-auto text-3xl font-semibold leading-8 text-primary-400 text-center">Ils ont testés, Ils ont adorés.
+        </h2>
+      </div>
       <div class="mx-auto flow-root max-w-2xl mt-6 lg:mx-0 lg:max-w-none">
         <div class="grid grid-cols-3 gap-5">
-          <div v-for="testimonial in testimonials" :key="testimonial.author.handle" class="pt-8 sm:inline-block sm:w-full sm:px-4">
+          <div v-for="testimonial in testimonials" :key="testimonial.author.handle"
+            class="pt-8 sm:inline-block sm:w-full sm:px-4">
             <figure class="rounded-2xl bg-secondary-400 p-12 text-sm leading-6">
               <figcaption class="flex items-center gap-x-4">
                 <img class="h-10 w-10 rounded-full bg-gray-50" :src="testimonial.author.imageUrl" alt="" />
@@ -63,7 +73,7 @@
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
       <div class="flex flex-row justify-around w-2/3 m-auto my-4">
         <div class=" flex flex-row justify-center space-x-10 h-45 items-center">
-          <MainLogo class="w-[50px]"/>
+          <MainLogo class="w-[50px]" />
           <h3>MealFit</h3>
         </div>
         <div class=" flex justify-center space-x-10 h-45 items-center">
@@ -79,12 +89,13 @@
         </div>
       </nav>
       <hr>
-      <p class="text-center text-xs leading-5 text-primary-700 font-semibold	">&copy; Copyright © 2023 MeatFil.fr - Tous droits réservés - Mentions légales - C.G. prestations de service</p>
+      <p class="text-center text-xs leading-5 text-primary-700 font-semibold	">&copy; Copyright © 2023 MeatFil.fr - Tous
+        droits réservés - Mentions légales - C.G. prestations de service</p>
     </div>
   </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const files = [
     {
       source: new URL ('@/assets/img/img_grid_lp.png', import.meta.url).href,
@@ -187,10 +198,8 @@ const navigation = {
 }
 </script>
 
-<style scoped>
-hr{
+<style scoped>hr {
   margin-top: 15px;
   margin-bottom: 15px;
   border: 1px solid #8A0B01;
-}
-</style>
+}</style>
