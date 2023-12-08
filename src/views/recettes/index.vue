@@ -13,8 +13,9 @@
         </div>
         <div class="hidden sm:block">
           <nav class="isolate flex divide-x divide-gray-200 rounded-lg shadow" aria-label="Tabs">
-            <RouterLink v-for="(tab, tabIdx) in activeTabs" :to="'/recettes' + tab.href" :key="tab.name"
-              :class="[tab.current ? 'text-gray-900' : 'text-gray-500 hover:text-gray-700', tabIdx === 0 ? 'rounded-l-lg' : '', tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '', 'group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 cursor-pointer']">
+            <RouterLink v-for="(tab, tabIdx) in tabs" :to="tab.href" :key="tab.name"
+              exact-active-class="text-gray-900 bg-primary-700 font-semibold " class="text-gray-500 hover:text-gray-700"
+              :class="[tabIdx === 0 ? 'rounded-l-lg' : '', tabIdx === tabs.length - 1 ? 'rounded-r-lg' : '', 'group relative min-w-0 flex-1 overflow-hidden bg-white py-4 px-4 text-center text-sm font-medium hover:bg-gray-50 focus:z-10 cursor-pointer']">
               <span>{{ tab.name }}</span>
               <span aria-hidden="true"
                 :class="[tab.current ? 'bg-primary-700' : 'bg-transparent', 'absolute inset-x-0 bottom-0 h-0.5']" />
@@ -28,18 +29,25 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const tabs = [
-  { name: 'Parcourir les recettes', href: '', current: true },
-  { name: 'Mes recettes', href: '/mes-recettes', current: false },
-  { name: 'Suggestion de recettes', href: '/suggestions', current: false },
+  { name: 'Parcourir les recettes', href: '/recettes/', current: false },
+  { name: 'Mes recettes', href: '/recettes/mes-recettes', current: false },
+  { name: 'Suggestion de recettes', href: '/recettes/suggestions', current: false },
 ];
 
 const route = useRoute();
 
-// Propriété calculée pour déterminer l'onglet actif en fonction de la route actuelle
+watch(() => route.path, () => {
+  tabs.forEach(tab => {
+    tab.current = route.path === tab.href;
+  });
+  console.log(route)
+  console.log(tabs)
+
+});
 const activeTabs = computed(() => {
   return tabs.map(tab => ({
     ...tab,

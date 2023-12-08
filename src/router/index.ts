@@ -13,11 +13,13 @@ import Suggestions from '@/views/recettes/Suggestions.vue'
 const routes = [
   { path: '/', component: Home },
   { path: '/planificateur-de-repas', component: PlanificateurDeRepas },
-  { path: '/recettes', component: Index, children:[
-    { path: '', component: Parcourir },
-    { path: 'mes-recettes', component: MesRecettes },
-    { path: 'suggestions', component: Suggestions },
-  ]},
+  {
+    path: '/recettes', component: Index, children: [
+      { path: '', component: Parcourir },
+      { path: 'mes-recettes', component: MesRecettes },
+      { path: 'suggestions', component: Suggestions },
+    ]
+  },
   { path: '/se-connecter', component: SeConnecter, meta: { layout: "WithoutNavbar" } },
   { path: '/inscription', component: Inscription, meta: { layout: "WithoutNavbar" } },
   { path: '/mdp-oublie', component: MdpOublie, meta: { layout: "WithoutNavbar" } },
