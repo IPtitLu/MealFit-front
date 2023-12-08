@@ -4,8 +4,8 @@
         <div class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center">
             <h2 class="text-2xl font-bold tracking-tight text-gray-900 text-center mb-6">Parcourir les recettes</h2>
             <div v-if="randomRecipes.length < 1" class="text-center">Aucune recette actuellement</div>
-            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                <div v-for="recipe in randomRecipes" :key="recipe.id" class="group relative">
+            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 mb-6">
+                <div v-for="recipe in randomRecipes" :key="recipe.id" class="group relative shadow-lg rounded-lg p-4 cursor-pointer">
                     <div class="min-w-12 h-40 rounded-md overflow-hidden relative">
                         <img :src="recipe.image" :alt="recipe.title"
                             class="w-full h-full object-cover aspect-video absolute" />

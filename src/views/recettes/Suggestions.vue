@@ -2,7 +2,7 @@
 <template>
     <section class="bg-white drop-shadow-lg pt-6 pb-10 rounded-md mb-4">
         <div
-            class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center"
+            class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8 flex flex-col justify-center items-center mb-6"
         >
             <h2
                 class="text-2xl font-bold tracking-tight text-gray-900 text-center mb-6"
